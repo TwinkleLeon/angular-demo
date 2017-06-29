@@ -1,0 +1,82 @@
+<form class="form-horizontal">
+    <div class="form-group">
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="inputEmail3" placeholder="请输入标题" ng-model="keyWord">
+            <br>
+            <input type="submit" value="搜索" class="btn btn-success" ng-click="search()">
+        </div>
+    </div>
+</form>
+<div class="listPart">
+    <div class="list-group" ng-repeat="(index,item) in data.datas">
+        <a class="list-group-item active">
+            <h4 class="list-group-item-heading">{{item.title}}</h4>
+            <p class="list-group-item-text">{{item.describes}}</p>
+            <input type="button" value="修改" class="btn btn-info" ng-click="edit(item.date)" data-toggle="modal" data-target="#myModal">
+            <input type="button" value="删除" class="btn btn-danger pull-right" ng-click="del(item.date)">
+        </a>
+    </div>
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li>
+                <a href="javascript:void(0)" aria-label="Previous" ng-click="pre()">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li ng-repeat="index in arr">
+                <a href="#editNews/{{index+1}}">{{index+1}}</a></li>
+            <li>
+                <a href="javascript:void(0)" aria-label="Next" ng-click="next()">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">修改新闻</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="input-group col-sm-5">
+                        <div class="input-group-addon">标题：</div>
+                        <input type="text" class="form-control"  value={{changeData.title}}>
+                    </div>
+
+                    <div class="input-group col-sm-5">
+                        <div class="input-group-addon">描述：</div>
+                        <input type="text" class="form-control"  value={{changeData.describes}}>
+                    </div>
+
+                    <div class="input-group  col-sm-2 col-xs-3">
+                        <div class="input-group-addon">分类：</div>
+                        <select class="form-control" >
+                    <option  value="{{changeData.categorys}}">{{changeData.categorys}}</option>
+                    <option  value="资讯新闻">资讯新闻</option>
+                    <option  value="财经新闻">财经新闻</option>
+                    <option  value="娱乐新闻">娱乐新闻</option>
+                    <option  value="体育新闻">体育新闻</option>
+                    <option  value="房产新闻">房产新闻</option>
+                    <option  value="科技新闻">科技新闻</option>
+                    <option  value="游戏新闻">游戏新闻</option>
+                    <option  value="军事新闻">军事新闻</option>
+        </select>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="editor_id" name="content" style="width:700px;height:300px;">{{changeData.content}}</textarea>
+                        <input ng-click="editShow()" type="hidden" name="load" value="加载JS并创建编辑器" />
+                        <input type="hidden" value="value={{changeData.uname}}" >
+                    </div>
+                    <div class="input-group">
+                        <input type="submit" value="提交" class="btn btn-primary" ng-click="add()">&nbsp;
+                        <input type="button" value="重置" class="btn btn-success" ng-click="reset()">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

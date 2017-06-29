@@ -1,0 +1,102 @@
+body,
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-image: url("../imgs/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.navbar.navbar-default {
+    background-color: transparent;
+    border: none;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+
+.navbar-default .navbar-nav a:focus,
+.navbar-default .navbar-nav li:hover {
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover {
+    background-color: rgba(231, 231, 231, .5);
+}
+
+.showBox .panel-body {
+    background-color: rgba(231, 231, 231, .5);
+}
+
+.panel {
+    background-color: rgba(231, 231, 231, .5);
+}
+
+//新闻分类列表页面
+.showBox .panel-body ul li {
+    box-sizing: border-box;
+    padding: 18px;
+    min-height: 320px;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    &.grid-item {
+        width: 255px;
+    }
+    .top {
+        margin-bottom: 15px;
+        img {
+            width: 95%;
+        }
+    }
+    .bottom {
+        h3 {
+            margin: 8px 0;
+        }
+        p {
+            margin: 8px 0;
+            color: gray;
+        }
+        span {
+            float: right;
+            font-size: 20px;
+            color: lightseagreen;
+        }
+    }
+}
+
+//新闻详情页面
+.panel-body {
+    .left {
+        img {
+            width: 95%;
+        }
+        h1,p{
+            margin:8px 0;
+        }
+        
+    }
+    .right {
+        margin-top: 88px;
+        ul li {
+            box-sizing: border-box;
+            padding: 5px;
+            min-height: 0;
+            background-color: white;
+            border-radius:0;
+        }
+        h4 {
+            color:white;
+            margin-bottom: 10px;
+        }
+    }
+}

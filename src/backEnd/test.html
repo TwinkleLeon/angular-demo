@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./js/lib/angular.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="myCtrl">
+        <textarea rows="22" cols="333" ng-model="val" ng-blur="blur()"></textarea>
+    </div>
+</body>
+<script>
+    var app = angular.module("myApp", [])
+    app.controller("myCtrl", ["$scope", function ($scope) {
+        $scope.blur = function () {
+            console.log($scope.val)
+        }
+    }])
+</script>
+
+</html>

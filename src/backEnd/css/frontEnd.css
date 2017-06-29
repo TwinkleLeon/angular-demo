@@ -1,0 +1,27 @@
+body, html {
+  height: 100%; }
+
+body {
+  background: url("../imgs/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.panel-default > .panel-heading {
+  background-color: transparent; }
+
+.panel {
+  background-color: transparent; }
+
+.panel-default {
+  border: none; }
+
+.input-group {
+  margin-top: 20px; }
+
+.list-group-item-text.ng-binding {
+  margin-bottom: 10px; }
+
+.list-group-item.active {
+  background-color: rgba(51, 122, 183, 0.3); }
+
+/*# sourceMappingURL=frontEnd.css.map */

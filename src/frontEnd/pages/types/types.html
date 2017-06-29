@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+    <div class="panel-heading">{{leixin}}</div>
+    <div class="panel-body">
+        <ul class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
+            <li class="col-sm-4 text-left grid-item" ng-repeat="item in data">
+                <div class="top text-center"><img src="http://d.ifengimg.com/q100/img1.ugc.ifeng.com/newugc/20170609/7/wemedia/4c422ef7e3ffab650204869b55d2aae8c802b866_size32_w612_h408.jpg" alt=""></div>
+                <div class="bottom">
+                    <h3>{{item.title}}</h3>
+                    <p>{{item.describes}}</p>
+                    <a href="#/detail/{{item.chuo}}" class="btn btn-success">查看详情</a>
+                    <span>{{item.date}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    setTimeout(function () {
+        var msnry = new Masonry('.grid', {
+            columnWidth: 255,
+            itemSelector: '.grid-item',
+            gutter: 10
+        });
+    }, 100)
+</script>

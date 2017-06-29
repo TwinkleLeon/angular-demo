@@ -1,0 +1,42 @@
+html,body{
+    height:100%;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+}
+.loginBox,.registerBox{
+    position:relative;
+    left:0;
+    top:0;
+    width: 566px;
+    height: auto;
+    background-color: white;
+    border-radius: 15px;
+    .title{
+        display: block;
+        font-size: 35px;
+        padding:35px 0;
+        margin-bottom: 30px;
+        text-align: center;
+        transition:all .5s;
+    }
+    .title:hover{
+        transform:scale(1.1,1.1) translateX(100px);
+    }
+    .psCheack{
+        position:absolute;
+        top:5px;
+        left:50%;
+        transform:translateX(-50%);
+        display: inline-block;
+        width:50%;
+        height:30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: lightsalmon;
+        color:white;
+    }
+}
